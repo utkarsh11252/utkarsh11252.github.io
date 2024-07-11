@@ -5,12 +5,11 @@
 {% endif %}
 
 <div itemscope itemtype="http://schema.org/Person">
-
-  <div class="author__avatar">
+  <div class="author__avatar" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden;">
     {% if author.avatar contains "://" %}
-    	<img src="{{ author.avatar }}" alt="{{ author.name }}">
+      <img src="{{ author.avatar }}" alt="{{ author.name }}" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
     {% else %}
-    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
+      <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ author.name }}" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
     {% endif %}
   </div>
 
@@ -26,6 +25,9 @@
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.location %}
         <li class="author__desktop"><i class="fa-solid fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>
+      {% endif %}
+      {% if author.university %}
+        <li class="author__desktop"><i class="fa-solid fa-university icon-pad-right" aria-hidden="true"></i>{{ author.university }}</li>
       {% endif %}
       {% if author.employer %}
         <li class="author__desktop"><i class="fa fa-solid fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ author.employer }}</li>
@@ -104,7 +106,10 @@
       {% endif %}
       {% if author.instagram %}
         <li><a href="https://instagram.com/{{ author.instagram }}"><i class="fab fa-fw fa-instagram icon-pad-right" aria-hidden="true"></i>Instagram</a></li>
-      {% endif %}      
+      {% endif %}   
+      {% if author.letterboxd %}
+        <li><a href="https://letterboxd.com/{{ author.letterboxd }}"><i class="fab fa-fw fa-letterboxd icon-pad-right" aria-hidden="true"></i>Letterboxd</a></li>
+      {% endif %}   
       {% if author.lastfm %}
         <li><a href="https://lastfm.com/user/{{ author.lastfm }}"><i class="fab fa-fw fa-lastfm icon-pad-right" aria-hidden="true"></i>Last.fm</a></li>
       {% endif %}      
@@ -124,7 +129,7 @@
         <li><a href="https://soundcloud.com/{{ author.soundcloud }}"><i class="fab fa-fw fa-soundcloud icon-pad-right" aria-hidden="true"></i>Soundcloud</a></li>
       {% endif %}      
       {% if author.steam %}
-        <li><a href="https://steamcommunity.com/id/{{ author.steam }}"><i class="fab fa-fw fa-steam icon-pad-right" aria-hidden="true"></i>Steam</a></li>
+        <li><a href="https://steamcommunity.com/profiles/{{ author.steam }}"><i class="fab fa-fw fa-steam icon-pad-right" aria-hidden="true"></i>Steam</a></li>
       {% endif %}
       {% if author.telegram %}
         <li><a href="{{ author.telegram }}"><i class="fab fa-fw fa-telegram icon-pad-right" aria-hidden="true"></i>Telegram</a></li>
@@ -156,3 +161,4 @@
     </ul>
   </div>
 </div>
+

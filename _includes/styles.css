@@ -1,0 +1,13 @@
+.author__avatar {
+  display: inline-block;
+  width: 100px; /* Adjust the width and height as needed */
+  height: 100px; /* Should be equal for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  overflow: hidden; /* Ensures the image stays within the rounded borders */
+}
+
+.author__avatar img {
+  width: 100%; /* Ensures the image fills the circular container */
+  height: auto; /* Allows the image to scale proportionally */
+  display: block; /* Fixes spacing issues */
+}

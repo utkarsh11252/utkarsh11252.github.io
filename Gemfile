@@ -16,7 +16,9 @@ gem "github-pages", group: :jekyll_plugins
 
 # gem "jekyll"
 
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+# gem "wdm", "~> 0.1.0" if Gem.win_platform?
+gem 'rb-inotify', '~> 0.10.1'
+
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
@@ -25,4 +27,9 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'hawkins'
   gem "webrick", "~> 1.8"
+  gem 'nokogiri', '~> 1.16', '>= 1.16.6'
+  gem 'public_suffix', '~> 5.1.1'
+  gem 'tzinfo', '~> 1.2', '>= 1.2.2'
+  gem 'tzinfo-data'
+  gem 'faraday-retry'
 end
