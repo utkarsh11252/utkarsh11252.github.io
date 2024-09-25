@@ -21,4 +21,4 @@ pollution moves through. Specifically:
 
 - Identify notable water quality events and use these to calculate transit times and speeds for various reaches of the river.
 
-## This project is still ongoing and will be done by September 2024.
+<iframe src="/files/dissertation-final (1)_compressed.pdf" width="100%" height="600px" style="border: none;"></iframe> 
